@@ -1,32 +1,22 @@
-#include "MSMGenerator-Reloaded.h"
+﻿#include "MSMGenerator-Reloaded.h"
 
 int main() {
 	setlocale(LC_CTYPE, "Polish");
-	while (wybor != 1 && wybor != 2) {
-		system("cls");
+	system("cls");
+	while (wybor != 1 && wybor != 2)
+	{
 		cout << "========================================== \n";
 		cout << "MSMGenerator-Reloaded By: Thorek & Yellow. \n";
-		cout << "========================================== \n \n";
-		cout << "Wybierz którąś z poniższych opcji: \n \n";
-		cout << "============================================= \n";
-		cout << "1 - Generacja wpisów dla zbroi lub kostiumów. \n";
-		cout << "2 - Generacja wpisów dla fryzur. \n";
-		cout << "============================================= \n \n";
+		cout << "========================================== \n";
+		cout << "\nWybierz co chcesz wygenerować: \n \n";
+		cout << "1 - Zbroje/Kostiumy. \n";
+		cout << "2 - Fryzury. \n \n";
 		cin >> wybor;
-		cout << endl;
+		cout << "\nIle wpisów chcesz stworzyć?: "; cin >> ile_wpisow_stworzyc;
+		cout << "A ile ich aktualnie posiadasz?: "; cin >> aktualna_liczba_wpisow;
+		cout << "Wprowadź swój największy Shape/HairIndex: "; cin >> aktualna_liczba_index;
+		if (wybor == 1) { cout << "Dodać specjalną linijkę dla modelu Twarzy? (0 - Nie, 1 - Tak): "; cin >> model_twarzy; }
 	}
-	if (wybor == 1) {
-		cout << "Ile wpisów chcesz stworzyć?: ";									cin >> ile_wpisow_stworzyc;
-		cout << "A ile ich aktualnie posiadasz?: ";									cin >> aktualna_liczba_wpisow;
-		cout << "Wprowadź swój największy ShapeIndex: ";							cin >> aktualna_liczba_index;
-		cout << "Dodać specjalną linijkę dla modelu Twarzy? (0 - Nie, 1 - Tak): ";	cin >> model_twarzy;
-	}
-	else {
-		cout << "Ile wpisów chcesz stworzyć?: ";									cin >> ile_wpisow_stworzyc;
-		cout << "A ile ich aktualnie posiadasz?: ";									cin >> aktualna_liczba_wpisow;
-		cout << "Na koniec, wprowadź swój największy HairIndex: ";					cin >> aktualna_liczba_index;
-	}
-	cout << endl;
 	sprawdzanie();
 }
 
@@ -79,15 +69,23 @@ void generacja() {
 			rozpoczynanie_od_zera = true;
 		}
 		for (; i <= ile_wpisow_stworzyc; i++) {
-			if (wybor == 1 && aktualna_liczba_wpisow + i < 10)
-				zapis << "\nGroup ShapeData0" << aktualna_liczba_wpisow + i;
-			else
-				zapis << "\nGroup ShapeData" << aktualna_liczba_wpisow + i;
+			if (wybor == 1) {
+				if (aktualna_liczba_wpisow + i < 10)
+					zapis << "\nGroup ShapeData0" << aktualna_liczba_wpisow + i;
+				else
+					zapis << "\nGroup ShapeData" << aktualna_liczba_wpisow + i;
+			}
+			else if (wybor == 2) {
+				if (aktualna_liczba_wpisow + i < 10)
+					zapis << "\nGroup HairData0" << aktualna_liczba_wpisow + i;
+				else
+					zapis << "\nGroup HairData" << aktualna_liczba_wpisow + i;
+			}
 
 			zapis << "\n{";
 
-			if (wybor == 1)
-				zapis << "\n\tShapeIndex			" << aktualna_liczba_index + i;
+			if (wybor == 1) zapis << "\n\tShapeIndex			" << aktualna_liczba_index + i;
+			else if (wybor == 2) zapis << "\n\tHairIndex			" << aktualna_liczba_index + i;
 
 			if (i < pliki1.size() && !rozpoczynanie_od_zera)
 				zapis << "\n\tModel				" << "\"" << pliki1[i] << "\"";
