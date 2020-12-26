@@ -4,20 +4,23 @@ int main() {
 	setlocale(LC_CTYPE, "Polish");
 	system("cls");
 	while (wybor != 1 && wybor != 2) {
-		cout << "------------------------------------------ \n";
-		cout << "MSMGenerator-Reloaded By: Thorek & Yellow. \n";
-		cout << "------------------------------------------ \n";
-		cout << "Wybierz co chcesz wygenerować: \n \n";
-		cout << "1 - Zbroje/Kostiumy. \n";
-		cout << "2 - Fryzury. \n \n";
-
+		system("cls");
+		cout << "==================================== \n";
+		cout << "= MSMGenerator By Thorek & Yellow. = \n";
+		cout << "==================================== \n";
+		cout << "===================================== \n";
+		cout << "= Wybierz jedną z poniższych opcji: = \n";
+		cout << "===================================== \n";
+		cout << "================================================ \n";
+		cout << "= 1: Tworzenie wpisów dla zbroi lub kostiumów. = \n";
+		cout << "= 2: Tworzenie wpisów dla fryzur.              = \n";
+		cout << "================================================ \n\n";
 		cin >> wybor;
-
-		cout << "\nIle wpisów chcesz stworzyć?: "; cin >> ile_wpisow_stworzyc;
-		cout << "A ile ich aktualnie posiadasz?: "; cin >> aktualna_liczba_wpisow;
-		cout << "Wprowadź swój największy Shape/HairIndex: "; cin >> aktualna_liczba_index;
-		if (wybor == 1) { cout << "Dodać specjalną linijkę dla modelu Twarzy? (0 - Nie, 1 - Tak): "; cin >> model_twarzy; }
 	}
+	cout << "\nIle wpisów chcesz stworzyć?: "; cin >> ile_wpisow_stworzyc;
+	cout << "Ile ich aktualnie posiadasz?: "; cin >> aktualna_liczba_wpisow;
+	cout << "Wprowadź swój największy Shape/HairIndex: "; cin >> aktualna_liczba_index;
+	if (wybor == 1) { cout << "Dodać specjalną linijkę dla modelu twarzy? (0 - Nie, 1 - Tak): "; cin >> model_twarzy; }
 	sprawdzanie();
 }
 
