@@ -1,17 +1,18 @@
-﻿#include "MSMGenerator-Reloaded.h"
+#include "MSMGenerator-Reloaded.h"
 
 int main() {
 	setlocale(LC_CTYPE, "Polish");
 	system("cls");
-	while (wybor != 1 && wybor != 2)
-	{
-		cout << "========================================== \n";
+	while (wybor != 1 && wybor != 2) {
+		cout << "------------------------------------------ \n";
 		cout << "MSMGenerator-Reloaded By: Thorek & Yellow. \n";
-		cout << "========================================== \n";
-		cout << "\nWybierz co chcesz wygenerować: \n \n";
+		cout << "------------------------------------------ \n";
+		cout << "Wybierz co chcesz wygenerować: \n \n";
 		cout << "1 - Zbroje/Kostiumy. \n";
 		cout << "2 - Fryzury. \n \n";
+
 		cin >> wybor;
+
 		cout << "\nIle wpisów chcesz stworzyć?: "; cin >> ile_wpisow_stworzyc;
 		cout << "A ile ich aktualnie posiadasz?: "; cin >> aktualna_liczba_wpisow;
 		cout << "Wprowadź swój największy Shape/HairIndex: "; cin >> aktualna_liczba_index;
@@ -108,15 +109,7 @@ void generacja() {
 			else
 				zapis << "\n\tTargetSkin			" << "\"" << pliki3[0] << "\"";
 
-			if (model_twarzy == 1 && wybor == 1)
-			{
-				if (i < pliki4.size() && !rozpoczynanie_od_zera)
-					zapis << "\n\tHead				" << "\"" << pliki4[i] << "\"";
-				else if (i < pliki4.size() + 1 && rozpoczynanie_od_zera)
-					zapis << "\n\tHead				" << "\"" << pliki4[i - 1] << "\"";
-				else
-					zapis << "\n\tHead				" << "\"" << pliki4[0] << "\"";
-			}
+			if (model_twarzy == 1 && wybor == 1) zapis << "\n\tHead				" << "\"" << pliki4[0] << "\"";
 
 			zapis << "\n}";
 		}
