@@ -1,4 +1,4 @@
-﻿#include "MSMGenerator-Reloaded.h"
+#include "MSMGenerator-Reloaded.h"
 
 int main() {
 	setlocale(LC_CTYPE, "Polish");
@@ -66,7 +66,7 @@ void sprawdzanie() {
 		if (licznik_plikow1 < 1) { cout << "Folder: \"Models\" jest pusty. \n \n"; system("pause"); exit(0); }
 		if (licznik_plikow2 < 1) { cout << "Folder: \"SourceSkins\" jest pusty. \n \n"; system("pause"); exit(0); }
 		if (licznik_plikow3 < 1) { cout << "Folder: \"TargetSkins\" jest pusty. \n \n"; system("pause"); exit(0); }
-		if (model_twarzy == 1 && licznik_plikow3 < 1) { cout << "Folder: \"TargetSkins\" jest pusty. \n \n"; system("pause"); exit(0); }
+		if (model_twarzy == 1 && licznik_plikow4 < 1) { cout << "Folder: \"Faces\" jest pusty. \n \n"; system("pause"); exit(0); }
 		generacja();
 	}
 }
