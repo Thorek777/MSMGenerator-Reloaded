@@ -5,15 +5,13 @@ int main() {
 	while (wybor != 1 && wybor != 2) {
 		system("cls");
 		cout << "------------------------------------ \n";
-		cout << "= MSMGenerator By Thorek & Yellow. = \n";
-		cout << "==================================== \n";
-		cout << "===================================== \n";
-		cout << "= Wybierz jedną z poniższych opcji: = \n";
-		cout << "===================================== \n";
-		cout << "================================================ \n";
-		cout << "= 1: Tworzenie wpisów dla zbroi lub kostiumów. = \n";
-		cout << "= 2: Tworzenie wpisów dla fryzur.              = \n";
-		cout << "================================================ \n\n";
+		cout << "- MSMGenerator By Thorek & Yellow. - \n";
+		cout << "------------------------------------ \n \n";
+		cout << "Wybierz jedną z poniższych opcji: \n \n";
+		cout << "------------------------------------------------ \n";
+		cout << "- 1. Tworzenie wpisów dla zbroi lub kostiumów. - \n";
+		cout << "- 2. Tworzenie wpisów dla fryzur.              - \n";
+		cout << "------------------------------------------------ \n\n";
 		cin >> wybor;
 	}
 	cout << "\nIle wpisów chcesz stworzyć?: "; cin >> ile_wpisow_stworzyc;
