@@ -2,10 +2,9 @@
 
 int main() {
 	setlocale(LC_CTYPE, "Polish");
-	system("cls");
 	while (wybor != 1 && wybor != 2) {
 		system("cls");
-		cout << "==================================== \n";
+		cout << "------------------------------------ \n";
 		cout << "= MSMGenerator By Thorek & Yellow. = \n";
 		cout << "==================================== \n";
 		cout << "===================================== \n";
