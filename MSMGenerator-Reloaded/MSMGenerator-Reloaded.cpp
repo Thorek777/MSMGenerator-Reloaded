@@ -72,9 +72,9 @@ void generacja() {
 		for (; i <= ile_wpisow_stworzyc; i++) {
 			if (wybor == 1) {
 				if (aktualna_liczba_wpisow + i < 10)
-					zapis << "\nGroup ShapeData0" << aktualna_liczba_wpisow + i;
+					zapis << "Group ShapeData0" << aktualna_liczba_wpisow + i;
 				else
-					zapis << "\nGroup ShapeData" << aktualna_liczba_wpisow + i;
+					zapis << "Group ShapeData" << aktualna_liczba_wpisow + i;
 			}
 			else if (wybor == 2) {
 				if (aktualna_liczba_wpisow + i < 10)
@@ -111,7 +111,7 @@ void generacja() {
 
 			if (model_twarzy == 1 && wybor == 1) zapis << "\n\tHead				" << "\"" << pliki4[0] << "\"";
 
-			zapis << "\n}";
+			zapis << "\n}\n";
 		}
 		zapis.close();
 	}
