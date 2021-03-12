@@ -1,8 +1,10 @@
 #include "MSMGenerator-Reloaded.h"
 
-int main() {
+int main()
+{
 	setlocale(LC_CTYPE, "Polish");
-	while (wybor != 1 && wybor != 2) {
+	while (wybor != 1 && wybor != 2)
+	{
 		system("cls");
 		cout << "------------------------------------ \n";
 		cout << "- MSMGenerator By Thorek & Yellow. - \n";
@@ -21,20 +23,24 @@ int main() {
 	sprawdzanie();
 }
 
-void sprawdzanie() {
+void sprawdzanie()
+{
 	system("cls");
 	if (!filesystem::exists(sciezka1)) { cout << "Folder: \"Models\" nie istnieje! \n \n"; system("pause"); exit(0); }
 	if (!filesystem::exists(sciezka2)) { cout << "Folder: \"SourceSkins\" nie istnieje! \n \n"; system("pause"); exit(0); }
 	if (!filesystem::exists(sciezka3)) { cout << "Folder: \"TargetSkins\" nie istnieje! \n \n"; system("pause"); exit(0); }
 	if (model_twarzy == 1 && !filesystem::exists(sciezka4)) { cout << "Folder: \"Faces\" nie istnieje! \n \n"; system("pause"); exit(0); }
-	else {
-		for (const auto& entry : filesystem::directory_iterator(sciezka1)) {
+	else
+	{
+		for (const auto& entry : filesystem::directory_iterator(sciezka1))
+		{
 			sciezka5 = entry.path().string();
 			sciezka5.erase(0, 7);
 			pliki1.emplace_back(sciezka5);
 			licznik_plikow1 += 1;
 		}
-		for (const auto& entry : filesystem::directory_iterator(sciezka2)) {
+		for (const auto& entry : filesystem::directory_iterator(sciezka2))
+		{
 			sciezka5 = entry.path().string();
 			sciezka5.erase(0, 12);
 			pliki2.emplace_back(sciezka5);
@@ -46,8 +52,10 @@ void sprawdzanie() {
 			pliki3.emplace_back(sciezka5);
 			licznik_plikow3 += 1;
 		}
-		if (model_twarzy == 1) {
-			for (const auto& entry : filesystem::directory_iterator(sciezka4)) {
+		if (model_twarzy == 1)
+		{
+			for (const auto& entry : filesystem::directory_iterator(sciezka4))
+			{
 				sciezka5 = entry.path().string();
 				sciezka5.erase(0, 6);
 				pliki4.emplace_back(sciezka5);
@@ -62,21 +70,27 @@ void sprawdzanie() {
 	}
 }
 
-void generacja() {
+void generacja()
+{
 	ofstream zapis("MSMGenerator.TXT");
-	if (zapis.is_open()) {
-		if (aktualna_liczba_wpisow > 0) {
+	if (zapis.is_open())
+	{
+		if (aktualna_liczba_wpisow > 0)
+		{
 			i = 1;
 			rozpoczynanie_od_zera = true;
 		}
-		for (; i <= ile_wpisow_stworzyc; i++) {
-			if (wybor == 1) {
+		for (; i <= ile_wpisow_stworzyc; i++)
+		{
+			if (wybor == 1)
+			{
 				if (aktualna_liczba_wpisow + i < 10)
 					zapis << "Group ShapeData0" << aktualna_liczba_wpisow + i;
 				else
 					zapis << "Group ShapeData" << aktualna_liczba_wpisow + i;
 			}
-			else if (wybor == 2) {
+			else if (wybor == 2)
+			{
 				if (aktualna_liczba_wpisow + i < 10)
 					zapis << "\nGroup HairData0" << aktualna_liczba_wpisow + i;
 				else
