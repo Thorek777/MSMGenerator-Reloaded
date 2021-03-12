@@ -57,7 +57,6 @@ void sprawdzanie()
 		cout << "Folder: \"TargetSkins\" nie istnieje!" << "\n" << "\n";
 		system("pause");
 		exit(0);
-	
 	}
 	if (model_twarzy == 1 && !filesystem::exists(sciezka4))
 	{
