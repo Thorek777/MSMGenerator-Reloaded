@@ -1,1 +1,1 @@
-##### Wersja C++ umożliwiająca skompilowanie programu: 17 lub wyższa.
+#### 𝚆𝚎𝚛𝚜𝚓𝚊 𝙲++ 𝚞𝚖𝚘𝚣̇𝚕𝚒𝚠𝚒𝚊𝚓𝚊̨𝚌𝚊 𝚜𝚔𝚘𝚖𝚙𝚒𝚕𝚘𝚠𝚊𝚗𝚒𝚎 𝚙𝚛𝚘𝚐𝚛𝚊𝚖𝚞: 𝟷𝟽 𝚕𝚞𝚋 𝚠𝚢𝚣̇𝚜𝚣𝚊.
